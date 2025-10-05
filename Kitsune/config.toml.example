@@ -1,0 +1,21 @@
+[security]
+raid_threshold_5s = 5
+raid_threshold_30s = 10
+raid_threshold_1m = 15
+raid_threshold_5m = 30
+new_account_days = 7
+username_similarity_threshold = 0.85
+spam_similarity_threshold = 0.80
+
+[auto_mod]
+enabled = true
+low_threat_threshold = 0.3
+medium_threat_threshold = 0.6
+high_threat_threshold = 0.8
+critical_threat_threshold = 0.95
+message_burst_count = 10
+message_burst_seconds = 10
+
+[forensics]
+retention_days = 90
+detailed_logging = true

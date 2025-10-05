@@ -1,0 +1,59 @@
+# Kitsune Guardian Fox - Configuration Example
+# Copy this file to config.toml and fill in your values
+
+[discord]
+# Your Discord bot token (keep this secret!)
+token = "YOUR_DISCORD_BOT_TOKEN_HERE"
+
+[security]
+# Raid Detection Settings
+join_threshold_5s = 5        # Users joining within 5 seconds
+join_threshold_30s = 10      # Users joining within 30 seconds
+join_threshold_1m = 15       # Users joining within 1 minute
+new_account_days = 7         # Days to consider account as "new"
+username_similarity = 0.8    # Similarity threshold for suspicious usernames (0.0-1.0)
+enabled = true               # Enable/disable raid detection
+
+[auto_mod]
+# Auto-Moderation Settings
+enabled = true
+low_threat_threshold = 0.3   # Monitor level
+medium_threat_threshold = 0.5 # Timeout level
+high_threat_threshold = 0.7   # Kick level
+critical_threat_threshold = 0.9 # Ban level
+
+[behavior]
+# Behavior Analysis Settings
+message_burst_threshold = 10  # Messages in 10 seconds
+spam_similarity = 0.9        # Text similarity threshold
+link_spam_threshold = 5      # Links in short time
+mention_spam_threshold = 5   # Mentions per message
+enabled = true
+
+[ml]
+# Machine Learning Settings
+model_path = "./models/threat_detector.onnx"
+inference_timeout_ms = 1000
+confidence_threshold = 0.75
+enabled = false              # Enable when model is available
+
+[logging]
+# Logging configuration
+level = "info"               # debug, info, warn, error
+file = "kitsune.log"
+console = true
+
+[database]
+# PostgreSQL connection (use DATABASE_URL env var instead)
+# url = "postgresql://user:password@localhost/kitsune"
+
+[redis]
+# Redis connection (use REDIS_URL env var instead)
+# url = "redis://localhost:6379"
+
+[features]
+# Optional features
+reputation_network = true    # Enable cross-server reputation
+honeypot = true             # Enable honeypot system
+analytics = true            # Enable analytics and ML
+backup = true               # Enable backup system
